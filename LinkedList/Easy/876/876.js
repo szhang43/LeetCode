@@ -22,3 +22,4 @@ var middleNode = function(head) {
     }
     return tmp
 };
+
