@@ -7,11 +7,11 @@ Given the `head` of a singly linked list and two integers `left` and `right` whe
 
 ## Example
 
-### Example 1:
+#### Example 1:
 **Input**: head = [1,2,3,4,5], left = 2, right = 4
 **Output**: [1,4,3,2,5]
 
-### Example 2:
+#### Example 2:
 **Input** : head = [5], left = 1, right = 1
 **Ouput**: [5]
 
@@ -24,4 +24,4 @@ Finally, connect the reversed part back to the original list, and return the `du
 
 ## Time Complexity
 
-The time complexity this solution is O(n), where n is the number of nodes in the linked list. The code iterates through all the nodes in the linked list once, making the time complexity linear with respect to the number of nodes.
+The time complexity this solution is `O(n)`, where n is the number of nodes in the linked list. The code iterates through all the nodes in the linked list once, making the time complexity linear with respect to the number of nodes.
