@@ -1,45 +1,35 @@
-
-// Definition for singly-linked list.
-function ListNode(val, next) {
-     this.val = (val===undefined ? 0 : val)
-     this.next = (next===undefined ? null : next)
- }
-
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
 /**
  * @param {ListNode} head
  * @param {number} x
  * @return {ListNode}
  */
 var partition = function(head, x) {
-    let less = null; 
-    let greater = null; 
+    let dummy1 = new ListNode();
+    let dummy2 = new ListNode(); 
+    let less = dummy1; 
+    let greater = dummy2;
     let curr = head; 
-    let compare = head; 
-    while(compare.val != x){
-        compare = compare.next;
-    }
-    while(curr){
-        if(curr.val < compare.val){
-            console.log("Less")
-            console.log("Current:", curr.val, "Compare:", compare.val)
-            if(!less){
-                less = curr
-            } else {
-                less.next = curr
-            }
+
+    while(curr !== null){
+        if(curr.val < x){
+            less.next = curr;
+            less = less.next;
         } else {
-            console.log("Greater")
-            console.log("Current:", curr.val, "Compare:", compare.val)
-            if(!greater){
-                greater = curr
-            } else{
-            greater.next = curr
-            }
+            greater.next = curr;
+            greater = greater.next;
         }
         curr = curr.next; 
     }
-    console.log("Less:", less, "Greater:", greater)
     
-};
+    greater.next = null; 
+    less.next = dummy2.next;
 
-partition([1, 4, 3, 2, 5, 2], x = 3);
+    return dummy1.next
+};
