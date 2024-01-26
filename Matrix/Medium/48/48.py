@@ -3,9 +3,9 @@ class Solution:
         """
         Do not return anything, modify matrix in-place instead.
         """
-        for i in range(len(matrix)): 
+        for i in range(len(matrix)):
             for j in range(i, len(matrix[i])):
-                temp = matrix[i][j] 
+                temp = matrix[i][j]
                 matrix[i][j] = matrix[j][i]
                 matrix[j][i] = temp
                 # print(matrix)
@@ -17,3 +17,6 @@ class Solution:
                 matrix[i][j] = matrix[i][length - j - 1]
                 matrix[i][length - j - 1] = temp
         return matrix
+
+
+  
